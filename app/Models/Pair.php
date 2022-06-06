@@ -19,6 +19,11 @@ class Pair extends Model
         'repeating_id'
     ];
 
+    public function pairInfo()
+    {
+        return $this->belongsTo(PairInfo::class);
+    }
+
     public function teacher()
     {
         return $this->belongsTo(Teacher::class);
