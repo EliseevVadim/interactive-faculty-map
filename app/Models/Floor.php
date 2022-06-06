@@ -18,4 +18,9 @@ class Floor extends Model
     {
         return $this->hasMany(Auditorium::class);
     }
+
+    public function secondaryObjects()
+    {
+        return $this->hasMany(SecondaryObject::class);
+    }
 }
