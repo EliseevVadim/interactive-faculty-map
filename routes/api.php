@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\AdminAuthorizationController;
 use App\Http\Controllers\API\AuditoriumsController;
 use App\Http\Controllers\API\DisciplinesController;
 use App\Http\Controllers\API\FloorsController;
@@ -31,3 +32,6 @@ Route::resource('pair-infos', PairInfosController::class);
 Route::resource('science-ranks', ScienceRanksController::class);
 Route::resource('pairs', PairsController::class);
 Route::resource('teachers-disciplines', TeachersDisciplinesController::class);
+
+Route::post('/createAdmin', [AdminAuthorizationController::class, "createAdmin"])->name('register');
+Route::post('/authorizeToAdminPanel', [AdminAuthorizationController::class, "loginAsAdministrator"])->name('login');
