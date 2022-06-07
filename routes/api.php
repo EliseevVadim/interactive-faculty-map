@@ -34,4 +34,3 @@ Route::resource('pairs', PairsController::class);
 Route::resource('teachers-disciplines', TeachersDisciplinesController::class);
 
 Route::post('/createAdmin', [AdminAuthorizationController::class, "createAdmin"])->name('register');
-Route::post('/authorizeToAdminPanel', [AdminAuthorizationController::class, "loginAsAdministrator"])->name('login');

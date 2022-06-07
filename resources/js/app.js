@@ -7,8 +7,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
-import vuetify from "vuetify";
+import vuetify from "./vuetify";
 import * as d3 from "d3";
+import {store} from "../../store";
 
 window.d3 = d3;
 
@@ -23,7 +24,7 @@ window.d3 = d3;
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-
+Vue.component('login-form', require('./components/LoginForm.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -34,5 +35,6 @@ window.d3 = d3;
 const app = new Vue({
     el: '#app',
     vuetify,
-    d3
+    d3,
+    store
 });

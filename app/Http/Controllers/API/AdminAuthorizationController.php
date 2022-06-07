@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class AdminAuthorizationController extends BaseController
@@ -33,7 +34,7 @@ class AdminAuthorizationController extends BaseController
         return $this->sendSuccessResponse($success, 'User created successfully');
     }
 
-    public function loginAsAdministrator(Request $request): JsonResponse
+    public function loginAsAdministrator(Request $request) : JsonResponse
     {
         if ($request->securityKey !== env('APP_SECRET'))
             return $this->sendError('You don\'t have permissions to do that', ['error' => 'Forbidden'], 403);

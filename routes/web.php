@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\AdminAuthorizationController;
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/adminPanel', [PagesController::class, "openAdminPage"])->name('openAdminPage');
+Route::get('/adminAuthorization', [PagesController::class, "openAdminAuthPage"])->name('openAdminAuthPage');
+Route::post('/authorizeToAdminPanel', [AdminAuthorizationController::class, "loginAsAdministrator"])->name('login');
