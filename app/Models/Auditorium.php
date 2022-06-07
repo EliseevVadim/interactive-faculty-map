@@ -9,6 +9,8 @@ class Auditorium extends Model
 {
     use HasFactory;
 
+    protected $table = 'auditoriums';
+
     protected $fillable = [
         'auditorium_name',
         'position_info',
