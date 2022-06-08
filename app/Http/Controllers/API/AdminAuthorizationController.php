@@ -50,4 +50,10 @@ class AdminAuthorizationController extends BaseController
         }
         return $this->sendError('Unauthorised.', ['error'=>'Unauthorised'], 401);
     }
+
+    public function logout(): JsonResponse
+    {
+        Auth::logout();
+        return $this->sendSuccessResponse([], 'User successfully logged out');
+    }
 }

@@ -5,5 +5,7 @@
 @endsection
 
 @section('content')
-    <h1>Hello there</h1>
+    <div id="app">
+        <admin-page></admin-page>
+    </div>
 @endsection

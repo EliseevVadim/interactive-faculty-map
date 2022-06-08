@@ -1,0 +1,133 @@
+<template>
+    <v-app>
+        <v-app-bar
+            color="deep-purple accent-4"
+            dark
+            prominent
+        >
+            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-spacer></v-spacer>
+            <v-menu
+                bottom
+                left
+            >
+                <template v-slot:activator="{ on, attrs }">
+                    <v-btn
+                        tile
+                        v-bind="attrs"
+                        v-on="on"
+                    >
+                        <v-icon left>
+                            mdi-account-circle
+                        </v-icon>
+                        Добро пожаловать, {{userName}}
+                    </v-btn>
+                </template>
+
+                <v-list>
+                    <v-list-item-group
+                        active-class="deep-purple--text text--accent-4"
+                    >
+                        <v-list-item @click="logout">
+                            <v-list-item-icon>
+                                <v-icon>mdi-logout</v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-content>
+                                <v-list-item-title>Выход</v-list-item-title>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-list-item-group>
+                </v-list>
+            </v-menu>
+        </v-app-bar>
+
+        <v-navigation-drawer
+            v-model="drawer"
+            absolute
+            bottom
+            temporary
+        >
+            <v-list
+                flat
+                nav
+                dense
+            >
+                <v-subheader>Управление приложением</v-subheader>
+                <v-divider></v-divider>
+                <v-list-item-group
+                    v-model="selectedItem"
+                    active-class="deep-purple--text text--accent-4"
+                >
+                    <v-list-item
+                        v-for="(item, i) in items"
+                        :key="i">
+                        <v-list-item-icon>
+                            <v-icon v-text="item.icon"></v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title v-text="item.text"></v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list-item-group>
+                <v-divider></v-divider>
+                <v-list-group
+                    :value="false"
+                    prepend-icon="mdi-tools"
+                >
+                    <template v-slot:activator>
+                        <v-list-item-title>Служебные</v-list-item-title>
+                    </template>
+                        <v-list-item
+                            v-for="([title, icon], i) in services"
+                            :key="i"
+                            link
+                        >
+                            <v-list-item-title v-text="title"></v-list-item-title>
+                            <v-list-item-icon>
+                                <v-icon v-text="icon"></v-icon>
+                            </v-list-item-icon>
+                        </v-list-item>
+                    </v-list-group>
+            </v-list>
+        </v-navigation-drawer>
+    </v-app>
+</template>
+
+<script>
+import {mapGetters} from "vuex";
+export default {
+    name: "AdminPage",
+    data() {
+        return {
+            drawer: false,
+            selectedItem : 0,
+            items : [
+                {text : "Этажи", icon : "mdi-floor-plan"},
+                {text : "Преподаватели", icon : "mdi-account-school"},
+                {text : "Аудитории", icon : "mdi-cellphone-link"},
+                {text : "Вторичные объекты", icon : "mdi-stairs"},
+                {text : "Пары", icon : "mdi-calendar-check"},
+                {text : "Дисциплины", icon : "mdi-playlist-check"}
+            ],
+            services: [
+                ['Ученые звания', 'mdi-trophy-award'],
+                ['Информация о парах', 'mdi-information-variant'],
+            ]
+        }
+    },
+    computed: {
+        userName() {
+           return localStorage.getItem('username');
+        },
+        ...mapGetters(['USER'])
+    },
+    methods: {
+        clickToggleDrawer() {
+            this.drawer = !this.drawer
+        },
+        logout() {
+            this.$store.dispatch('logout');
+        }
+    },
+};
+</script>

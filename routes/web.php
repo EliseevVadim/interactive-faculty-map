@@ -22,3 +22,4 @@ Route::get('/', function () {
 Route::get('/adminPanel', [PagesController::class, "openAdminPage"])->name('openAdminPage');
 Route::get('/adminAuthorization', [PagesController::class, "openAdminAuthPage"])->name('openAdminAuthPage');
 Route::post('/authorizeToAdminPanel', [AdminAuthorizationController::class, "loginAsAdministrator"])->name('login');
+Route::get('/logout', [AdminAuthorizationController::class, "logout"])->name('logout');

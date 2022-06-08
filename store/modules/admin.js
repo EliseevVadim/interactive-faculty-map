@@ -14,15 +14,19 @@ const getters = {
 const mutations = {
     setName: function (state, name) {
         state.user.name = name;
+        localStorage.setItem('username', name);
     },
     removeName: function (state) {
         state.user.name = "";
+        localStorage.removeItem('username');
     },
     setId: function (state, id) {
         state.user.id = id;
+        localStorage.setItem('userId', id);
     },
     removeId: function (state) {
         state.user.id = null;
+        localStorage.removeItem('userId');
     },
 };
 
@@ -44,6 +48,14 @@ const actions = {
                     reject(error);
                 })
         })
+    },
+    logout: function (context) {
+        axios.get('/logout')
+            .then(() => {
+                context.commit('removeName');
+                context.commit('removeId');
+                window.location.href = "/adminAuthorization";
+            })
     }
 };
 

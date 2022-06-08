@@ -34,7 +34,8 @@
                             :rules="passwordRules"
                             v-model="password"
                             :type="showPassword ? 'text' : 'password'"
-                            :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'">
+                            :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
+                            @click:append="showPassword = !showPassword">
                         </v-text-field>
                         <v-btn
                             class="mt-5"
