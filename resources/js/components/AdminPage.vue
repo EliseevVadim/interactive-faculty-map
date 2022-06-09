@@ -98,6 +98,7 @@
             <teachers-presenter v-if="selectedItem === 1"></teachers-presenter>
             <disciplines-presenter v-if="selectedItem === 5"></disciplines-presenter>
             <pair-infos-presenter v-if="selectedItem === 7"></pair-infos-presenter>
+            <science-ranks-presenter v-if="selectedItem === 6"></science-ranks-presenter>
         </v-main>
     </v-app>
 </template>

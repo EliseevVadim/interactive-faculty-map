@@ -29,6 +29,7 @@ Vue.component('admin-page', require('./components/AdminPage.vue').default);
 Vue.component('teachers-presenter', require('./components/TeachersPresenter.vue').default);
 Vue.component('disciplines-presenter', require('./components/DisciplinesPresenter.vue').default);
 Vue.component('pair-infos-presenter', require('./components/PairInfosPresenter.vue').default);
+Vue.component('science-ranks-presenter', require('./components/ScienceRanksPresenter.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
