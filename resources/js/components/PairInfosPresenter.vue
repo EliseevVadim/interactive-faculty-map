@@ -147,7 +147,7 @@
 import {mapGetters} from "vuex";
 
 export default {
-    name: "DisciplinesPresenter",
+    name: "PairInfosPresenter",
     data () {
         return {
             showAddingForm: false,
