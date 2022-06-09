@@ -81,9 +81,10 @@
                         <v-list-item-title>Служебные</v-list-item-title>
                     </template>
                         <v-list-item
-                            v-for="([title, icon], i) in services"
+                            v-for="([title, icon, index], i) in services"
                             :key="i"
                             link
+                            @click="selectItem(index)"
                         >
                             <v-list-item-title v-text="title"></v-list-item-title>
                             <v-list-item-icon>
@@ -96,6 +97,7 @@
         <v-main>
             <teachers-presenter v-if="selectedItem === 1"></teachers-presenter>
             <disciplines-presenter v-if="selectedItem === 5"></disciplines-presenter>
+            <pair-infos-presenter v-if="selectedItem === 7"></pair-infos-presenter>
         </v-main>
     </v-app>
 </template>
@@ -117,8 +119,8 @@ export default {
                 {text : "Дисциплины", icon : "mdi-playlist-check"}
             ],
             services: [
-                ['Ученые звания', 'mdi-trophy-award'],
-                ['Информация о парах', 'mdi-information-variant'],
+                ['Ученые звания', 'mdi-trophy-award', 6],
+                ['Информация о парах', 'mdi-information-variant', 7],
             ]
         }
     },
@@ -137,6 +139,10 @@ export default {
         },
         hideSidebar() {
             this.drawer = false;
+        },
+        selectItem(index) {
+            this.selectedItem = index;
+            this.hideSidebar();
         }
     },
 };

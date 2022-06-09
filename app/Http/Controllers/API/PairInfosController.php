@@ -29,9 +29,9 @@ class PairInfosController extends BaseController
         try {
             $input = $request->all();
             $validator = Validator::make($input, [
-                'fio' => 'required|string',
-                'photo_path' => 'required|string',
-                'science_rank_id' => 'required|integer'
+                'pair_number' => 'required|integer',
+                'start_time' => 'required|string',
+                'end_time' => 'required|string'
             ]);
             if ($validator->fails())
                 return $this->sendError('Validation fails', $validator->errors(), 422);
@@ -48,9 +48,9 @@ class PairInfosController extends BaseController
         try {
             $input = $request->all();
             $validator = Validator::make($input, [
-                'fio' => 'required|string',
-                'photo_path' => 'required|string',
-                'science_rank_id' => 'required|integer'
+                'pair_number' => 'required|integer',
+                'start_time' => 'required|string',
+                'end_time' => 'required|string'
             ]);
             if ($validator->fails())
                 return $this->sendError('Validation fails', $validator->errors(), 422);
