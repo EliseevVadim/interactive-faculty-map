@@ -2,8 +2,10 @@
     <v-app>
         <v-app-bar
             color="deep-purple accent-4"
+            elevation="24"
+            dense
             dark
-            prominent
+            class="flex-grow-0"
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-spacer></v-spacer>
@@ -58,9 +60,10 @@
                     v-model="selectedItem"
                     active-class="deep-purple--text text--accent-4"
                 >
-                    <v-list-item
+                    <v-list-item @click="hideSidebar"
                         v-for="(item, i) in items"
-                        :key="i">
+                        :key="i"
+                        >
                         <v-list-item-icon>
                             <v-icon v-text="item.icon"></v-icon>
                         </v-list-item-icon>
@@ -90,6 +93,9 @@
                     </v-list-group>
             </v-list>
         </v-navigation-drawer>
+        <v-main>
+            <teachers-presenter v-if="selectedItem === 1"></teachers-presenter>
+        </v-main>
     </v-app>
 </template>
 
@@ -100,7 +106,7 @@ export default {
     data() {
         return {
             drawer: false,
-            selectedItem : 0,
+            selectedItem : 1,
             items : [
                 {text : "Этажи", icon : "mdi-floor-plan"},
                 {text : "Преподаватели", icon : "mdi-account-school"},
@@ -127,6 +133,9 @@ export default {
         },
         logout() {
             this.$store.dispatch('logout');
+        },
+        hideSidebar() {
+            this.drawer = false;
         }
     },
 };

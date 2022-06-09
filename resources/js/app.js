@@ -26,6 +26,7 @@ window.d3 = d3;
 
 Vue.component('login-form', require('./components/LoginForm.vue').default);
 Vue.component('admin-page', require('./components/AdminPage.vue').default);
+Vue.component('teachers-presenter', require('./components/TeachersPresenter.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

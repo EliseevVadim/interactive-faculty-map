@@ -12,7 +12,9 @@ class Teacher extends Model
     protected $fillable = [
         'fio',
         'photo_path',
-        'science_rank_id'
+        'science_rank_id',
+        'email',
+        'birth_date'
     ];
 
     public function scienceRank()

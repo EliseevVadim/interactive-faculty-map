@@ -18,8 +18,11 @@ class TeacherResource extends JsonResource
             'id' => $this->id,
             'fio' => $this->fio,
             'photo_path' => $this->photo_path,
-            'scienceRank' => ScienceRankResource::make($this->scienceRank),
+            'scienceRank' => $this->scienceRank->rank_name,
+            'science_rank_id' => $this->science_rank_id,
             'pairs' => PairResource::collection($this->pairs),
+            'email' => $this->email,
+            'birth_date' => $this->birth_date,
             'teachersDisciplines' => TeacherDicsiplineResource::collection($this->teachersDisciplines),
             'created_at' => $this->created_at->format('m/d/Y'),
             'updated_at' => $this->updated_at->format('m/d/Y')
