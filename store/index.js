@@ -3,6 +3,7 @@ import Vuex from "vuex";
 import admin from "./modules/admin";
 import scienceRanks from "./modules/scienceRanks";
 import teachers from "./modules/teachers";
+import disciplines from "./modules/disciplines";
 
 Vue.use(Vuex);
 
@@ -14,6 +15,7 @@ export const store = new Vuex.Store({
     modules: {
         admin,
         scienceRanks,
-        teachers
+        teachers,
+        disciplines
     }
 });

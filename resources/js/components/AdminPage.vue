@@ -95,6 +95,7 @@
         </v-navigation-drawer>
         <v-main>
             <teachers-presenter v-if="selectedItem === 1"></teachers-presenter>
+            <disciplines-presenter v-if="selectedItem === 5"></disciplines-presenter>
         </v-main>
     </v-app>
 </template>
