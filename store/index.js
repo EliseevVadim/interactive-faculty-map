@@ -5,6 +5,7 @@ import scienceRanks from "./modules/scienceRanks";
 import teachers from "./modules/teachers";
 import disciplines from "./modules/disciplines";
 import pairInfos from "./modules/pairInfos";
+import floors from "./modules/floors";
 
 Vue.use(Vuex);
 
@@ -18,6 +19,7 @@ export const store = new Vuex.Store({
         scienceRanks,
         teachers,
         disciplines,
-        pairInfos
+        pairInfos,
+        floors
     }
 });

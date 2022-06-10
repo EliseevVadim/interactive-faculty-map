@@ -30,6 +30,8 @@ Vue.component('teachers-presenter', require('./components/TeachersPresenter.vue'
 Vue.component('disciplines-presenter', require('./components/DisciplinesPresenter.vue').default);
 Vue.component('pair-infos-presenter', require('./components/PairInfosPresenter.vue').default);
 Vue.component('science-ranks-presenter', require('./components/ScienceRanksPresenter.vue').default);
+Vue.component('floors-presenter', require('./components/FloorsPresenter.vue').default);
+Vue.component('floor-component', require('./components/FloorDrawer.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -95,6 +95,7 @@
             </v-list>
         </v-navigation-drawer>
         <v-main>
+            <floors-presenter v-if="selectedItem === 0"></floors-presenter>
             <teachers-presenter v-if="selectedItem === 1"></teachers-presenter>
             <disciplines-presenter v-if="selectedItem === 5"></disciplines-presenter>
             <pair-infos-presenter v-if="selectedItem === 7"></pair-infos-presenter>
@@ -110,7 +111,7 @@ export default {
     data() {
         return {
             drawer: false,
-            selectedItem : 1,
+            selectedItem : 0,
             items : [
                 {text : "Этажи", icon : "mdi-floor-plan"},
                 {text : "Преподаватели", icon : "mdi-account-school"},
