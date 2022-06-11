@@ -31,7 +31,7 @@
         <div v-if="displayEditingTool && result.length > 0">
             <h2 class="text-center">Изменить координаты нарисованных точек</h2>
             <v-row>
-                <v-col cols="3" md="4" class="mt-3" v-for="point in this.result">
+                <v-col cols="3" md="4" class="mt-3" v-for="(point, index) in this.result" :key="index">
                     <v-text-field
                         label="X-координата*"
                         required

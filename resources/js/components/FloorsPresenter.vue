@@ -151,6 +151,16 @@
 
             </svg>
         </div>
+        <v-col
+            cols="12"
+            class="text-center">
+            <v-btn
+                color="red"
+                dark
+                @click="clearPreviewArea">
+                Очистить область предпросмотра
+            </v-btn>
+        </v-col>
     </div>
 </template>
 
@@ -288,19 +298,6 @@ export default {
                 .style('fill', 'none')
                 .style("stroke", "black")
                 .style("stroke-width", "2");
-            for(let i = 0; i < data.length; i++) {
-                let circle = g.selectAll('circles')
-                    .data([data[i]])
-                    .enter()
-                    .append('circle')
-                    .attr('cx', data[i][0])
-                    .attr('cy', data[i][1])
-                    .attr('r', 4)
-                    .attr('fill', '#FDBC07')
-                    .attr('stroke', '#000')
-                    .attr('is-handle', 'true')
-                    .style({cursor: 'move'})
-            }
         },
         clearPreviewArea() {
             d3.selectAll('#preview-container > g').remove();
