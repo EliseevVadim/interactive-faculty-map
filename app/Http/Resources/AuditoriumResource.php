@@ -19,8 +19,9 @@ class AuditoriumResource extends JsonResource
             'auditorium_name' => $this->auditorium_name,
             'position_info' => $this->position_info,
             'floor_id' => $this->floor_id,
+            'floor' => $this->floor->name,
             'holder_id' => $this->holder_id,
-            'teacher' => TeacherResource::make($this->teacher),
+            'teacher' => $this->teacher->fio,
             'created_at' => $this->created_at->format('m/d/Y'),
             'updated_at' => $this->updated_at->format('m/d/Y')
         ];

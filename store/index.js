@@ -6,6 +6,7 @@ import teachers from "./modules/teachers";
 import disciplines from "./modules/disciplines";
 import pairInfos from "./modules/pairInfos";
 import floors from "./modules/floors";
+import auditoriums from "./modules/auditoriums";
 
 Vue.use(Vuex);
 
@@ -20,6 +21,7 @@ export const store = new Vuex.Store({
         teachers,
         disciplines,
         pairInfos,
-        floors
+        floors,
+        auditoriums
     }
 });

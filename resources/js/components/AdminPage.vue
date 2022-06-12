@@ -97,6 +97,7 @@
         <v-main>
             <floors-presenter v-if="selectedItem === 0"></floors-presenter>
             <teachers-presenter v-if="selectedItem === 1"></teachers-presenter>
+            <auditoriums-presenter v-if="selectedItem === 2"></auditoriums-presenter>
             <disciplines-presenter v-if="selectedItem === 5"></disciplines-presenter>
             <pair-infos-presenter v-if="selectedItem === 7"></pair-infos-presenter>
             <science-ranks-presenter v-if="selectedItem === 6"></science-ranks-presenter>
@@ -111,7 +112,7 @@ export default {
     data() {
         return {
             drawer: false,
-            selectedItem : 0,
+            selectedItem : 2,
             items : [
                 {text : "Этажи", icon : "mdi-floor-plan"},
                 {text : "Преподаватели", icon : "mdi-account-school"},

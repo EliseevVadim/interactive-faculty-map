@@ -37,7 +37,7 @@ class AuditoriumsController extends BaseController
             if ($validator->fails())
                 return $this->sendError('Validation fails', $validator->errors(), 422);
             $auditorium = Auditorium::create($input);
-            return $this->sendSuccessResponse(new Auditorium($auditorium), 'success');
+            return $this->sendSuccessResponse(new AuditoriumResource($auditorium), 'success');
         }
         catch (\Exception $exception) {
             return $this->sendError($exception->getMessage(), ['error' => $exception->getMessage()], 400);
