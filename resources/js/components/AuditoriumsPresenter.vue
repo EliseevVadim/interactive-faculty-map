@@ -380,7 +380,10 @@ export default {
             let data = [];
             for (let i = 0; i < auditoriums.length; i++) {
                 data = JSON.parse(auditoriums[i].position_info);
-                d3.select('#floor-container')
+                let gAppend = d3.select('#floor-container')
+                    .append('g')
+                    .attr('class', 'auditorium');
+                gAppend
                     .append('rect')
                     .style("fill", "white")
                     .style("stroke", "black")
@@ -389,6 +392,15 @@ export default {
                     .attr("y", data.y)
                     .attr("width", data.width)
                     .attr("height", data.height);
+                gAppend
+                    .append('text')
+                    .style("font-size", "14px")
+                    .style("color", "black")
+                    .style("position", "relative")
+                    .style("text-anchor", "middle")
+                    .attr("x", data.x + data.width / 2)
+                    .attr("y", data.y + data.height / 2 + 5)
+                    .text(auditoriums[i].auditorium_name);
             }
         },
         previewAuditoriumRect() {
