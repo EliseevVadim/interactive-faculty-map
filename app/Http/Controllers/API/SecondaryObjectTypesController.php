@@ -20,7 +20,7 @@ class SecondaryObjectTypesController extends BaseController
     {
         $objectType = SecondaryObjectType::find($id);
         if (is_null($objectType))
-            return $this->sendError('Secondary object type rank does not exist');
+            return $this->sendError('Secondary object type does not exist');
         return $this->sendSuccessResponse(new SecondaryObjectTypeResource($objectType), 'success');
     }
 
@@ -42,7 +42,7 @@ class SecondaryObjectTypesController extends BaseController
         }
     }
 
-    public function update(Request $request, SecondaryObjectType $objectType): JsonResponse
+    public function update(Request $request, SecondaryObjectType $secondaryObjectType): JsonResponse
     {
         try {
             $input = $request->all();
@@ -52,18 +52,18 @@ class SecondaryObjectTypesController extends BaseController
             ]);
             if ($validator->fails())
                 return $this->sendError('Validation fails', $validator->errors(), 422);
-            $objectType->update($input);
-            return $this->sendSuccessResponse(new SecondaryObjectTypeResource($objectType), 'success');
+            $secondaryObjectType->update($input);
+            return $this->sendSuccessResponse(new SecondaryObjectTypeResource($secondaryObjectType), 'success');
         }
         catch (\Exception $exception) {
             return $this->sendError($exception->getMessage(), ['error' => $exception->getMessage()], 400);
         }
     }
 
-    public function destroy(SecondaryObjectType $objectType): JsonResponse
+    public function destroy(SecondaryObjectType $secondaryObjectType): JsonResponse
     {
         try {
-            $objectType->delete();
+            $secondaryObjectType->delete();
             return $this->sendSuccessResponse([], 'Secondary object type was deleted');
         }
         catch (\Exception $exception) {

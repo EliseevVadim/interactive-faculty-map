@@ -99,8 +99,9 @@
             <teachers-presenter v-if="selectedItem === 1"></teachers-presenter>
             <auditoriums-presenter v-if="selectedItem === 2"></auditoriums-presenter>
             <disciplines-presenter v-if="selectedItem === 5"></disciplines-presenter>
-            <pair-infos-presenter v-if="selectedItem === 7"></pair-infos-presenter>
             <science-ranks-presenter v-if="selectedItem === 6"></science-ranks-presenter>
+            <pair-infos-presenter v-if="selectedItem === 7"></pair-infos-presenter>
+            <secondary-object-types-presenter v-if="selectedItem === 8"></secondary-object-types-presenter>
         </v-main>
     </v-app>
 </template>
@@ -124,6 +125,7 @@ export default {
             services: [
                 ['Ученые звания', 'mdi-trophy-award', 6],
                 ['Информация о парах', 'mdi-information-variant', 7],
+                ['Типы вторичных объектов', 'mdi-map-legend', 8]
             ]
         }
     },
