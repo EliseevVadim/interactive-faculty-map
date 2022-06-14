@@ -37,6 +37,7 @@ Vue.component('floor-component', require('./components/FloorDrawer.vue').default
 Vue.component('auditoriums-presenter', require('./components/AuditoriumsPresenter.vue').default);
 Vue.component('secondary-object-types-presenter', require('./components/SecondaryObjectTypesPresenter.vue').default);
 Vue.component('secondary-objects-presenter', require('./components/SecondaryObjectsPresenter.vue').default);
+Vue.component('pairs-presenter', require('./components/PairsPresenter.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

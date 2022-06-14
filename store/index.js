@@ -9,6 +9,9 @@ import floors from "./modules/floors";
 import auditoriums from "./modules/auditoriums";
 import secondaryObjectTypes from "./modules/secondaryObjectTypes";
 import secondaryObjects from "./modules/secondaryObjects";
+import pairs from "./modules/pairs";
+import pairRepeatings from "./modules/pairRepeatings";
+import daysOfWeek from "./modules/daysOfWeek";
 
 Vue.use(Vuex);
 
@@ -26,6 +29,9 @@ export const store = new Vuex.Store({
         floors,
         auditoriums,
         secondaryObjectTypes,
-        secondaryObjects
+        secondaryObjects,
+        pairs,
+        pairRepeatings,
+        daysOfWeek
     }
 });

@@ -4,6 +4,7 @@ use App\Http\Controllers\API\AdminAuthorizationController;
 use App\Http\Controllers\API\AuditoriumsController;
 use App\Http\Controllers\API\DisciplinesController;
 use App\Http\Controllers\API\FloorsController;
+use App\Http\Controllers\API\MetaInfoController;
 use App\Http\Controllers\API\PairInfosController;
 use App\Http\Controllers\API\PairsController;
 use App\Http\Controllers\API\ScienceRanksController;
@@ -36,3 +37,6 @@ Route::resource('teachers-disciplines', TeachersDisciplinesController::class);
 Route::resource('secondary-object-types', SecondaryObjectTypesController::class);
 
 Route::post('/createAdmin', [AdminAuthorizationController::class, "createAdmin"])->name('register');
+
+Route::get('/pairs-repeatings', [MetaInfoController::class, "loadAllPairsRepeatings"]);
+Route::get('/days-of-week', [MetaInfoController::class, "loadAllDaysOfWeek"]);
