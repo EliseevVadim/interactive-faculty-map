@@ -31,7 +31,8 @@ class SecondaryObjectsController extends BaseController
             $validator = Validator::make($input, [
                 'object_name' => 'required|string',
                 'position_info' => 'required|string',
-                'object_type_id' => 'required|integer'
+                'object_type_id' => 'required|integer',
+                'floor_id' => 'required|integer'
             ]);
             if ($validator->fails())
                 return $this->sendError('Validation fails', $validator->errors(), 422);
@@ -50,7 +51,8 @@ class SecondaryObjectsController extends BaseController
             $validator = Validator::make($input, [
                 'object_name' => 'required|string',
                 'position_info' => 'required|string',
-                'object_type_id' => 'required|integer'
+                'object_type_id' => 'required|integer',
+                'floor_id' => 'required|integer'
             ]);
             if ($validator->fails())
                 return $this->sendError('Validation fails', $validator->errors(), 422);

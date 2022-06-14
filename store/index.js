@@ -8,6 +8,7 @@ import pairInfos from "./modules/pairInfos";
 import floors from "./modules/floors";
 import auditoriums from "./modules/auditoriums";
 import secondaryObjectTypes from "./modules/secondaryObjectTypes";
+import secondaryObjects from "./modules/secondaryObjects";
 
 Vue.use(Vuex);
 
@@ -24,6 +25,7 @@ export const store = new Vuex.Store({
         pairInfos,
         floors,
         auditoriums,
-        secondaryObjectTypes
+        secondaryObjectTypes,
+        secondaryObjects
     }
 });

@@ -11,7 +11,9 @@ class SecondaryObject extends Model
 
     protected $fillable = [
         'object_name',
-        'position_info'
+        'position_info',
+        'floor_id',
+        'object_type_id'
     ];
 
     public function floor()

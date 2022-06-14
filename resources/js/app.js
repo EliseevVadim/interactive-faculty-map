@@ -4,6 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+import Vue from "vue";
+
 require('./bootstrap');
 
 window.Vue = require('vue').default;
@@ -34,6 +36,7 @@ Vue.component('floors-presenter', require('./components/FloorsPresenter.vue').de
 Vue.component('floor-component', require('./components/FloorDrawer.vue').default);
 Vue.component('auditoriums-presenter', require('./components/AuditoriumsPresenter.vue').default);
 Vue.component('secondary-object-types-presenter', require('./components/SecondaryObjectTypesPresenter.vue').default);
+Vue.component('secondary-objects-presenter', require('./components/SecondaryObjectsPresenter.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

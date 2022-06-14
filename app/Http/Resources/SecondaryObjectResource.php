@@ -18,6 +18,8 @@ class SecondaryObjectResource extends JsonResource
             'id' => $this->id,
             'object_name' => $this->object_name,
             'position_info' => $this->position_info,
+            'floor' => $this->floor->name,
+            'floor_id' => $this->floor_id,
             'object_type' => SecondaryObjectTypeResource::make($this->objectType),
             'created_at' => $this->created_at->format('m/d/Y'),
             'updated_at' => $this->updated_at->format('m/d/Y')

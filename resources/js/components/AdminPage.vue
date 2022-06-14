@@ -98,6 +98,7 @@
             <floors-presenter v-if="selectedItem === 0"></floors-presenter>
             <teachers-presenter v-if="selectedItem === 1"></teachers-presenter>
             <auditoriums-presenter v-if="selectedItem === 2"></auditoriums-presenter>
+            <secondary-objects-presenter v-if="selectedItem === 3"></secondary-objects-presenter>
             <disciplines-presenter v-if="selectedItem === 5"></disciplines-presenter>
             <science-ranks-presenter v-if="selectedItem === 6"></science-ranks-presenter>
             <pair-infos-presenter v-if="selectedItem === 7"></pair-infos-presenter>
