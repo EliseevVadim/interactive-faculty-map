@@ -350,7 +350,6 @@ export default {
                     this.updating = true;
                     this.showAddingForm = true;
                     this.drawFloorBoundsById();
-                    this.drawFloorAuditoriums(JSON.parse(JSON.stringify(response.data.data.auditoriums)));
                 })
         },
         drawFloorBoundsById() {
@@ -358,7 +357,7 @@ export default {
             this.$store.dispatch('loadFloorById', this.auditorium.floor_id)
                 .then((response) => {
                     this.drawBounds(JSON.parse(response.data.data.bounds));
-                    this.drawFloorAuditoriums(JSON.parse(JSON.stringify(response.data.data.auditoriums)));
+                    this.drawFloorObjects(JSON.parse(JSON.stringify(response.data.data.auditoriums)), JSON.parse(JSON.stringify(response.data.data.secondaryObjects)));
                 })
         },
         drawBounds(data) {
@@ -371,7 +370,7 @@ export default {
                 .style("stroke", "black")
                 .style("stroke-width", "2");
         },
-        drawFloorAuditoriums(auditoriums) {
+        drawFloorObjects(auditoriums, secondaryObjects) {
             if (this.updating) {
                 let index = auditoriums.findIndex((item) => item.id === this.auditorium.id);
                 auditoriums.splice(index, 1);
@@ -401,6 +400,39 @@ export default {
                     .attr("x", data.x + data.width / 2)
                     .attr("y", data.y + data.height / 2 + 5)
                     .text(auditoriums[i].auditorium_name);
+            }
+            for (let i = 0; i < secondaryObjects.length; i++) {
+                data = JSON.parse(secondaryObjects[i].position_info);
+                let secondaryObjectAppend = d3.select('#floor-container')
+                    .append('g')
+                    .attr('class', 'secondaryObject')
+                    .attr("width", data.width)
+                    .attr("height", data.height);
+                secondaryObjectAppend
+                    .append('rect')
+                    .style("fill", "white")
+                    .style("stroke", "black")
+                    .style("stroke-width", "2")
+                    .attr("x", data.x)
+                    .attr("y", data.y)
+                    .attr("width", data.width)
+                    .attr("height", data.height);
+                secondaryObjectAppend
+                    .append('text')
+                    .style("font-size", "14px")
+                    .style("color", "black")
+                    .style("position", "relative")
+                    .style("text-anchor", "middle")
+                    .attr("x", data.x + data.width / 2)
+                    .attr("y", data.y + Math.min(20, data.height * 0.4))
+                    .text(secondaryObjects[i].object_name);
+                secondaryObjectAppend
+                    .append('image')
+                    .attr("x", data.x + data.width * 0.1)
+                    .attr("y", data.y + data.height * 0.4)
+                    .attr("width", data.width * 0.8)
+                    .attr("height", data.height * 0.6)
+                    .attr("href", secondaryObjects[i].object_type.type_path);
             }
         },
         previewAuditoriumRect() {
