@@ -50,7 +50,6 @@ const actions = {
             let formData = new FormData();
             formData.append('discipline_name', payload.discipline_name);
             formData.append('_method', 'PUT')
-            console.log(formData);
             await axios.post('/api/disciplines/' + payload.id, formData)
                 .then((response) => {
                     resolve(response);

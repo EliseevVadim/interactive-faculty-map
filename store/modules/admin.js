@@ -41,7 +41,6 @@ const actions = {
                 .then(response => {
                     context.commit('setName', response.data.data.name);
                     context.commit('setId', response.data.data.id);
-                    console.log(response.data);
                     window.location.href = '/adminPanel';
                 })
                 .catch(error => {

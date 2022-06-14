@@ -50,7 +50,6 @@ const actions = {
             let formData = new FormData();
             formData.append('rank_name', payload.rank_name);
             formData.append('_method', 'PUT')
-            console.log(formData);
             await axios.post('/api/science-ranks/' + payload.id, formData)
                 .then((response) => {
                     resolve(response);

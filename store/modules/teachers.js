@@ -65,7 +65,6 @@ const actions = {
             formData.append('science_rank_id', payload.science_rank_id);
             formData.append('photo', payload.photo);
             formData.append('_method', 'PUT')
-            console.log(formData);
             await axios.post('/api/teachers/' + payload.id, formData)
                 .then((response) => {
                     resolve(response);

@@ -52,7 +52,6 @@ const actions = {
             formData.append('object_type_name', payload.object_type_name);
             formData.append('type_path', payload.type_path);
             formData.append('_method', 'PUT')
-            console.log(formData);
             await axios.post('/api/secondary-object-types/' + payload.id, formData)
                 .then((response) => {
                     resolve(response);

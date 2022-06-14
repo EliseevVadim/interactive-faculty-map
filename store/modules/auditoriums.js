@@ -56,7 +56,6 @@ const actions = {
             formData.append('floor_id', payload.floor_id);
             formData.append('holder_id', payload.holder_id);
             formData.append('_method', 'PUT')
-            console.log(formData);
             await axios.post('/api/auditoriums/' + payload.id, formData)
                 .then((response) => {
                     resolve(response);

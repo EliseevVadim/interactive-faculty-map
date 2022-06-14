@@ -62,7 +62,6 @@ const actions = {
             formData.append('day_of_week_id', payload.day_of_week_id);
             formData.append('repeating_id', payload.repeating_id);
             formData.append('_method', 'PUT')
-            console.log(formData);
             await axios.post('/api/pairs/' + payload.id, formData)
                 .then((response) => {
                     resolve(response);

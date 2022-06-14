@@ -54,7 +54,6 @@ const actions = {
             formData.append('start_time', payload.start_time);
             formData.append('end_time', payload.end_time);
             formData.append('_method', 'PUT')
-            console.log(formData);
             await axios.post('/api/pair-infos/' + payload.id, formData)
                 .then((response) => {
                     resolve(response);

@@ -328,7 +328,6 @@ export default {
                     this.pair.discipline_id = response.data.data.discipline.id;
                     this.pair.day_of_week_id = response.data.data.dayOfWeek.id;
                     this.pair.repeating_id = response.data.data.repeating.id;
-                    console.log(response.data.data);
                     this.updating = true;
                     this.showAddingForm = true;
                 })

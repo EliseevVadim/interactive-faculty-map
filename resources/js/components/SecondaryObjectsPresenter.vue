@@ -292,7 +292,6 @@ export default {
                 return;
             this.errorText = "";
             if(!this.updating) {
-                console.log(this.secondary_object);
                 this.$store.dispatch('addSecondaryObject', this.secondary_object)
                     .then(() => {
                         this.resetSecondaryObject();
