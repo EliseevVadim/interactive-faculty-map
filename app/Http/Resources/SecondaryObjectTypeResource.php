@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class SecondaryObjectResource extends JsonResource
+class SecondaryObjectTypeResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,9 +16,8 @@ class SecondaryObjectResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'object_name' => $this->object_name,
-            'position_info' => $this->position_info,
-            'object_type' => SecondaryObjectTypeResource::make($this->objectType),
+            'object_type_name' => $this->object_type_name,
+            'type_path' => $this->type_path,
             'created_at' => $this->created_at->format('m/d/Y'),
             'updated_at' => $this->updated_at->format('m/d/Y')
         ];

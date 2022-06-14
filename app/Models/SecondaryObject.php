@@ -18,4 +18,9 @@ class SecondaryObject extends Model
     {
         return $this->belongsTo(Floor::class);
     }
+
+    public function objectType()
+    {
+        return $this->belongsTo(SecondaryObjectType::class);
+    }
 }
