@@ -17,6 +17,8 @@ class PairResource extends JsonResource
         return [
             'id' => $this->id,
             'pair_name' => $this->pair_name,
+            'group_id' => $this->group_id,
+            'group_name' => $this->group->group_name,
             'teachers_fio' => $this->teacher->fio,
             'teacher_id' => $this->teacher->id,
             'pairInfo' => PairInfoResource::make($this->pairInfo),

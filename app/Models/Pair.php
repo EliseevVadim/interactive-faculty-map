@@ -16,7 +16,8 @@ class Pair extends Model
         'auditorium_id',
         'discipline_id',
         'day_of_week_id',
-        'repeating_id'
+        'repeating_id',
+        'group_id'
     ];
 
     public function pairInfo()
@@ -47,5 +48,10 @@ class Pair extends Model
     public function repeating()
     {
         return $this->belongsTo(PairRepeating::class, 'repeating_id');
+    }
+
+    public function group()
+    {
+        return $this->belongsTo(Group::class);
     }
 }

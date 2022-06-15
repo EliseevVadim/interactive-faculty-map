@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\API\AdminAuthorizationController;
 use App\Http\Controllers\API\AuditoriumsController;
+use App\Http\Controllers\API\CoursesController;
 use App\Http\Controllers\API\DisciplinesController;
 use App\Http\Controllers\API\FloorsController;
+use App\Http\Controllers\API\GroupsController;
 use App\Http\Controllers\API\MetaInfoController;
 use App\Http\Controllers\API\PairInfosController;
 use App\Http\Controllers\API\PairsController;
@@ -35,6 +37,8 @@ Route::resource('science-ranks', ScienceRanksController::class);
 Route::resource('pairs', PairsController::class);
 Route::resource('teachers-disciplines', TeachersDisciplinesController::class);
 Route::resource('secondary-object-types', SecondaryObjectTypesController::class);
+Route::resource('groups', GroupsController::class);
+Route::resource('courses', CoursesController::class);
 
 Route::post('/createAdmin', [AdminAuthorizationController::class, "createAdmin"])->name('register');
 
