@@ -36,8 +36,6 @@ class AdminAuthorizationController extends BaseController
 
     public function loginAsAdministrator(Request $request) : JsonResponse
     {
-        if ($request->securityKey !== env('APP_SECRET'))
-            return $this->sendError('You don\'t have permissions to do that', ['error' => 'Forbidden'], 403);
         $user = User::where([
             'email' => $request->email,
             'password' => sha1($request->password)

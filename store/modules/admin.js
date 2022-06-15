@@ -35,7 +35,6 @@ const actions = {
         let formData = new FormData();
         formData.append('email', authData.email);
         formData.append('password', authData.password);
-        formData.append('securityKey', '18F7DC6F-D242-4492-AE99-D60F376D5CCB');
         return new Promise((resolve, reject) => {
             axios.post('/authorizeToAdminPanel', formData)
                 .then(response => {
