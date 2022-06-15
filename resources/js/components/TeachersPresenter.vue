@@ -59,6 +59,7 @@
                                 ></v-text-field>
                             </v-col>
                             <v-col cols="12" class="text-center">
+                                <h3 class="black--text mb-3">Укажите дату рождения преподавателя</h3>
                                 <v-date-picker
                                     v-model="teacher.birth_date"
                                     required

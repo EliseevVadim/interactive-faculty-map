@@ -116,7 +116,7 @@ export default {
     data() {
         return {
             drawer: false,
-            selectedItem : 9,
+            selectedItem : 0,
             items : [
                 {text : "Этажи", icon : "mdi-floor-plan"},
                 {text : "Преподаватели", icon : "mdi-account-school"},
