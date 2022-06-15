@@ -38,6 +38,7 @@ Vue.component('auditoriums-presenter', require('./components/AuditoriumsPresente
 Vue.component('secondary-object-types-presenter', require('./components/SecondaryObjectTypesPresenter.vue').default);
 Vue.component('secondary-objects-presenter', require('./components/SecondaryObjectsPresenter.vue').default);
 Vue.component('pairs-presenter', require('./components/PairsPresenter.vue').default);
+Vue.component('teachers-disciplines-assigner', require('./components/TeachersDisciplinesAssigner.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

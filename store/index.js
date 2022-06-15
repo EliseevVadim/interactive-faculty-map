@@ -12,6 +12,7 @@ import secondaryObjects from "./modules/secondaryObjects";
 import pairs from "./modules/pairs";
 import pairRepeatings from "./modules/pairRepeatings";
 import daysOfWeek from "./modules/daysOfWeek";
+import teachersDisciplines from "./modules/teachersDisciplines";
 
 Vue.use(Vuex);
 
@@ -32,6 +33,7 @@ export const store = new Vuex.Store({
         secondaryObjects,
         pairs,
         pairRepeatings,
-        daysOfWeek
+        daysOfWeek,
+        teachersDisciplines
     }
 });

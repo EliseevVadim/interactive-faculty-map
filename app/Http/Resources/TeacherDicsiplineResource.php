@@ -17,7 +17,8 @@ class TeacherDicsiplineResource extends JsonResource
         return [
             'id' => $this->id,
             'discipline' => DisciplineResource::make($this->discipline),
-            'teacher' => TeacherResource::make($this->teacher),
+            'teachers_fio' => $this->teacher->fio,
+            'teacher_id' => $this->teacher_id,
             'created_at' => $this->created_at->format('m/d/Y'),
             'updated_at' => $this->updated_at->format('m/d/Y')
         ];

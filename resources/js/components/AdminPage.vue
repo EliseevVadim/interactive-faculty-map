@@ -104,6 +104,7 @@
             <science-ranks-presenter v-if="selectedItem === 6"></science-ranks-presenter>
             <pair-infos-presenter v-if="selectedItem === 7"></pair-infos-presenter>
             <secondary-object-types-presenter v-if="selectedItem === 8"></secondary-object-types-presenter>
+            <teachers-disciplines-assigner v-if="selectedItem === 9"></teachers-disciplines-assigner>
         </v-main>
     </v-app>
 </template>
@@ -115,7 +116,7 @@ export default {
     data() {
         return {
             drawer: false,
-            selectedItem : 4,
+            selectedItem : 9,
             items : [
                 {text : "Этажи", icon : "mdi-floor-plan"},
                 {text : "Преподаватели", icon : "mdi-account-school"},
@@ -127,7 +128,8 @@ export default {
             services: [
                 ['Ученые звания', 'mdi-trophy-award', 6],
                 ['Информация о парах', 'mdi-information-variant', 7],
-                ['Типы вторичных объектов', 'mdi-map-legend', 8]
+                ['Типы вторичных объектов', 'mdi-map-legend', 8],
+                ['Назначение дисциплин', 'mdi-clipboard-check', 9]
             ]
         }
     },

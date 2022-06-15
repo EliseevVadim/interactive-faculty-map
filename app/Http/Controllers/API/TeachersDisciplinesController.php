@@ -42,7 +42,7 @@ class TeachersDisciplinesController extends BaseController
         }
     }
 
-    public function update(Request $request, TeacherDiscipline $teacherDiscipline): JsonResponse
+    public function update(Request $request, TeacherDiscipline $teachersDiscipline): JsonResponse
     {
         try {
             $input = $request->all();
@@ -52,18 +52,18 @@ class TeachersDisciplinesController extends BaseController
             ]);
             if ($validator->fails())
                 return $this->sendError('Validation fails', $validator->errors(), 422);
-            $teacherDiscipline->update($input);
-            return $this->sendSuccessResponse(new TeacherDicsiplineResource($teacherDiscipline), 'success');
+            $teachersDiscipline->update($input);
+            return $this->sendSuccessResponse(new TeacherDicsiplineResource($teachersDiscipline), 'success');
         }
         catch (\Exception $exception) {
             return $this->sendError($exception->getMessage(), ['error' => $exception->getMessage()], 400);
         }
     }
 
-    public function destroy(TeacherDiscipline $teacherDiscipline): JsonResponse
+    public function destroy(TeacherDiscipline $teachersDiscipline): JsonResponse
     {
         try {
-            $teacherDiscipline->delete();
+            $teachersDiscipline->delete();
             return $this->sendSuccessResponse([], 'Teacher discipline was deleted');
         }
         catch (\Exception $exception) {
