@@ -50,6 +50,18 @@
                             </v-col>
                             <v-col cols="12">
                                 <v-autocomplete
+                                    label="Группа*"
+                                    required
+                                    :rules="commonRules"
+                                    :items="this.GROUPS"
+                                    :item-text="getFullGroupName"
+                                    item-value="id"
+                                    hide-details="auto"
+                                    v-model="pair.group_id"
+                                ></v-autocomplete>
+                            </v-col>
+                            <v-col cols="12">
+                                <v-autocomplete
                                     label="Аудитория*"
                                     required
                                     :rules="commonRules"
@@ -163,6 +175,12 @@
                             {{item.pairInfo.end_time}}
                         </td>
                         <td>
+                            {{item.group_name}}
+                        </td>
+                        <td>
+                            {{item.course_name}}
+                        </td>
+                        <td>
                             {{item.auditorium.auditorium_name}}
                         </td>
                         <td>
@@ -226,7 +244,8 @@ export default {
                 auditorium_id: null,
                 discipline_id: null,
                 day_of_week_id: null,
-                repeating_id: null
+                repeating_id: null,
+                group_id: null
             },
             commonRules: [
                 v => !!v || 'Поле является обязательным для заполнения'
@@ -240,6 +259,8 @@ export default {
                 { text: 'Название пары', value: 'pair_name' },
                 { text: 'Начало пары', value: 'pair_start' },
                 { text: 'Конец пары', value: 'pair_end' },
+                { text: 'Группа', value: 'group' },
+                { text: 'Курс', value: 'course' },
                 { text: 'Аудитория', value: 'auditorium' },
                 { text: 'Преподаватель', value: 'teacher' },
                 { text: 'День недели', value: 'dayOfWeek' },
@@ -256,8 +277,12 @@ export default {
         this.$store.dispatch('loadAllPairRepeatings');
         this.$store.dispatch('loadAllDisciplines');
         this.$store.dispatch('loadAllAuditoriums');
+        this.$store.dispatch('loadAllGroups');
     },
     methods: {
+        getFullGroupName(item) {
+            return item.group_name + ' ' + '(' + item.course_name + ')';
+        },
         openAddingForm() {
             this.errorText = "";
             this.resetPair();
@@ -301,6 +326,7 @@ export default {
                 this.pair.discipline_id = null;
                 this.pair.day_of_week_id = null;
                 this.pair.repeating_id = null;
+                this.pair.group_id = null;
         },
         deletePair(id) {
             if (confirm("Вы действительно хотите удалить данную запись")) {
@@ -328,6 +354,7 @@ export default {
                     this.pair.discipline_id = response.data.data.discipline.id;
                     this.pair.day_of_week_id = response.data.data.dayOfWeek.id;
                     this.pair.repeating_id = response.data.data.repeating.id;
+                    this.pair.group_id = response.data.data.group_id;
                     this.updating = true;
                     this.showAddingForm = true;
                 })
@@ -340,7 +367,8 @@ export default {
         ...mapGetters(['AUDITORIUMS']),
         ...mapGetters(['PAIR_REPEATINGS']),
         ...mapGetters(['DAYS_OF_WEEK']),
-        ...mapGetters(['PAIRS'])
+        ...mapGetters(['PAIRS']),
+        ...mapGetters(['GROUPS'])
     }
 }
 </script>

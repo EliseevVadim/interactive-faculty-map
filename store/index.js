@@ -13,6 +13,8 @@ import pairs from "./modules/pairs";
 import pairRepeatings from "./modules/pairRepeatings";
 import daysOfWeek from "./modules/daysOfWeek";
 import teachersDisciplines from "./modules/teachersDisciplines";
+import groups from "./modules/groups";
+import courses from "./modules/courses";
 
 Vue.use(Vuex);
 
@@ -34,6 +36,8 @@ export const store = new Vuex.Store({
         pairs,
         pairRepeatings,
         daysOfWeek,
-        teachersDisciplines
+        teachersDisciplines,
+        groups,
+        courses
     }
 });

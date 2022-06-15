@@ -101,10 +101,12 @@
             <secondary-objects-presenter v-if="selectedItem === 3"></secondary-objects-presenter>
             <pairs-presenter v-if="selectedItem === 4"></pairs-presenter>
             <disciplines-presenter v-if="selectedItem === 5"></disciplines-presenter>
-            <science-ranks-presenter v-if="selectedItem === 6"></science-ranks-presenter>
-            <pair-infos-presenter v-if="selectedItem === 7"></pair-infos-presenter>
-            <secondary-object-types-presenter v-if="selectedItem === 8"></secondary-object-types-presenter>
-            <teachers-disciplines-assigner v-if="selectedItem === 9"></teachers-disciplines-assigner>
+            <courses-presenter v-if="selectedItem === 6"></courses-presenter>
+            <groups-presenter v-if="selectedItem === 7"></groups-presenter>
+            <science-ranks-presenter v-if="selectedItem === 8"></science-ranks-presenter>
+            <pair-infos-presenter v-if="selectedItem === 9"></pair-infos-presenter>
+            <secondary-object-types-presenter v-if="selectedItem === 10"></secondary-object-types-presenter>
+            <teachers-disciplines-assigner v-if="selectedItem === 11"></teachers-disciplines-assigner>
         </v-main>
     </v-app>
 </template>
@@ -123,13 +125,15 @@ export default {
                 {text : "Аудитории", icon : "mdi-cellphone-link"},
                 {text : "Вторичные объекты", icon : "mdi-stairs"},
                 {text : "Пары", icon : "mdi-calendar-check"},
-                {text : "Дисциплины", icon : "mdi-playlist-check"}
+                {text : "Дисциплины", icon : "mdi-playlist-check"},
+                {text : "Курсы", icon : "mdi-star"},
+                {text : "Группы", icon : "mdi-account-multiple"}
             ],
             services: [
-                ['Ученые звания', 'mdi-trophy-award', 6],
-                ['Информация о парах', 'mdi-information-variant', 7],
-                ['Типы вторичных объектов', 'mdi-map-legend', 8],
-                ['Назначение дисциплин', 'mdi-clipboard-check', 9]
+                ['Ученые звания', 'mdi-trophy-award', 8],
+                ['Информация о парах', 'mdi-information-variant', 9],
+                ['Типы вторичных объектов', 'mdi-map-legend', 10],
+                ['Назначение дисциплин', 'mdi-clipboard-check', 11]
             ]
         }
     },

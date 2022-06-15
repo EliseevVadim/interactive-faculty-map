@@ -31,6 +31,7 @@ const actions = {
             formData.append('discipline_id', payload.discipline_id);
             formData.append('day_of_week_id', payload.day_of_week_id);
             formData.append('repeating_id', payload.repeating_id);
+            formData.append('group_id', payload.group_id);
             await axios.post('/api/pairs', formData)
                 .then((response) => {
                     resolve(response);
@@ -61,6 +62,7 @@ const actions = {
             formData.append('discipline_id', payload.discipline_id);
             formData.append('day_of_week_id', payload.day_of_week_id);
             formData.append('repeating_id', payload.repeating_id);
+            formData.append('group_id', payload.group_id);
             formData.append('_method', 'PUT')
             await axios.post('/api/pairs/' + payload.id, formData)
                 .then((response) => {
