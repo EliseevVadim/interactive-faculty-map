@@ -15,12 +15,28 @@
             </a>
             <v-toolbar-title class="ml-2">Интерактивная карта факультета</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn icon>
-                <v-icon>mdi-magnify</v-icon>
-            </v-btn>
-            <v-btn icon>
-                <v-icon>mdi-dots-vertical</v-icon>
-            </v-btn>
+            <v-menu
+                bottom
+                left
+            >
+                <template v-slot:activator="{ on, attrs }">
+                    <v-btn
+                        icon
+                        color="yellow"
+                        v-bind="attrs"
+                        v-on="on"
+                    >
+                        <v-icon>mdi-dots-vertical</v-icon>
+                    </v-btn>
+                </template>
+                <v-list>
+                    <v-list-item>
+                        <v-list-item-title>
+                            <a href="/adminPanel" class="header-link">Страница администратора</a>
+                        </v-list-item-title>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
             <template v-slot:extension>
                 <v-tabs
                     align-with-title
@@ -142,5 +158,11 @@ export default {
     }
     .social-link {
         text-decoration: none;
+    }
+    a.header-link {
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bolder;
     }
 </style>
