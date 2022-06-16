@@ -15,13 +15,13 @@ class PairRepeatingSeeder extends Seeder
     public function run()
     {
         $repeating = PairRepeating::firstOrCreate(
-            ['repeating_name' => 'EveryWeek']
+            ['repeating_name' => 'Каждую неделю']
         );
         $repeating = PairRepeating::firstOrCreate(
-            ['repeating_name' => 'HighWeek']
+            ['repeating_name' => 'По верхней неделе']
         );
         $repeating = PairRepeating::firstOrCreate(
-            ['repeating_name' => 'LowWeek']
+            ['repeating_name' => 'По нижней неделе']
         );
     }
 }
