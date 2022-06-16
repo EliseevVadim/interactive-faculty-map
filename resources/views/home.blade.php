@@ -6,8 +6,6 @@
 
 @section('content')
     <div id="app">
-        <v-app>
-            <app-header></app-header>
-        </v-app>
+        <main-app-page></main-app-page>
     </div>
 @endsection

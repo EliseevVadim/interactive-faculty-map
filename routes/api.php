@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AdminAuthorizationController;
 use App\Http\Controllers\API\AuditoriumsController;
+use App\Http\Controllers\API\ClientRequestsController;
 use App\Http\Controllers\API\CoursesController;
 use App\Http\Controllers\API\DisciplinesController;
 use App\Http\Controllers\API\FloorsController;
@@ -44,3 +45,5 @@ Route::post('/createAdmin', [AdminAuthorizationController::class, "createAdmin"]
 
 Route::get('/pairs-repeatings', [MetaInfoController::class, "loadAllPairsRepeatings"]);
 Route::get('/days-of-week', [MetaInfoController::class, "loadAllDaysOfWeek"]);
+Route::get('/auditorium-info/{id}', [ClientRequestsController::class, "loadAuditoriumInfo"]);
+Route::get('/schedule/{groupId}', [ClientRequestsController::class, "loadGroupScheduleById"]);

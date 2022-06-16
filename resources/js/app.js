@@ -39,9 +39,14 @@ Vue.component('secondary-object-types-presenter', require('./components/Secondar
 Vue.component('secondary-objects-presenter', require('./components/SecondaryObjectsPresenter.vue').default);
 Vue.component('pairs-presenter', require('./components/PairsPresenter.vue').default);
 Vue.component('teachers-disciplines-assigner', require('./components/TeachersDisciplinesAssigner.vue').default);
-Vue.component('app-header', require('./components/AppHeader.vue').default);
+Vue.component('main-app-page', require('./components/MainAppPage.vue').default);
 Vue.component('courses-presenter', require('./components/CoursesPresenter.vue').default);
 Vue.component('groups-presenter', require('./components/GroupsPresenter.vue').default);
+Vue.component('main-page-content', require('./components/MainPageContent.vue').default);
+Vue.component('teachers-page-content', require('./components/TeachersPageContent.vue').default);
+Vue.component('about-page-content', require('./components/AboutPageContent.vue').default);
+Vue.component('info-page-content', require('./components/InfoPageContent.vue').default);
+Vue.component('pairs-page-content', require('./components/PairsPageContent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

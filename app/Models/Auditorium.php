@@ -27,4 +27,9 @@ class Auditorium extends Model
     {
         return $this->belongsTo(Teacher::class, 'holder_id');
     }
+
+    public function pairs()
+    {
+        return $this->hasMany(Pair::class);
+    }
 }
