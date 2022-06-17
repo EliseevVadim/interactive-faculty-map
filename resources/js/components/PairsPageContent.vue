@@ -48,6 +48,9 @@
                                                 Название
                                             </th>
                                             <th class="text-left">
+                                                Аудитория
+                                            </th>
+                                            <th class="text-left">
                                                 Преподаватель
                                             </th>
                                             <th class="text-left">
@@ -68,6 +71,7 @@
                                         >
                                             <td>{{ item.pairInfo.pair_number }}</td>
                                             <td>{{ item.pair_name }}</td>
+                                            <td>{{ item.auditorium.auditorium_name }}</td>
                                             <td>{{ item.teachers_fio }}</td>
                                             <td>{{ item.pairInfo.start_time }}</td>
                                             <td>{{ item.pairInfo.end_time }}</td>
@@ -90,6 +94,9 @@
                                                 Название
                                             </th>
                                             <th class="text-left">
+                                                Аудитория
+                                            </th>
+                                            <th class="text-left">
                                                 Преподаватель
                                             </th>
                                             <th class="text-left">
@@ -110,6 +117,7 @@
                                         >
                                             <td>{{ item.pairInfo.pair_number }}</td>
                                             <td>{{ item.pair_name }}</td>
+                                            <td>{{ item.auditorium.auditorium_name }}</td>
                                             <td>{{ item.teachers_fio }}</td>
                                             <td>{{ item.pairInfo.start_time }}</td>
                                             <td>{{ item.pairInfo.end_time }}</td>
@@ -132,6 +140,9 @@
                                                 Название
                                             </th>
                                             <th class="text-left">
+                                                Аудитория
+                                            </th>
+                                            <th class="text-left">
                                                 Преподаватель
                                             </th>
                                             <th class="text-left">
@@ -152,6 +163,7 @@
                                         >
                                             <td>{{ item.pairInfo.pair_number }}</td>
                                             <td>{{ item.pair_name }}</td>
+                                            <td>{{ item.auditorium.auditorium_name }}</td>
                                             <td>{{ item.teachers_fio }}</td>
                                             <td>{{ item.pairInfo.start_time }}</td>
                                             <td>{{ item.pairInfo.end_time }}</td>
@@ -174,6 +186,9 @@
                                                 Название
                                             </th>
                                             <th class="text-left">
+                                                Аудитория
+                                            </th>
+                                            <th class="text-left">
                                                 Преподаватель
                                             </th>
                                             <th class="text-left">
@@ -194,6 +209,7 @@
                                         >
                                             <td>{{ item.pairInfo.pair_number }}</td>
                                             <td>{{ item.pair_name }}</td>
+                                            <td>{{ item.auditorium.auditorium_name }}</td>
                                             <td>{{ item.teachers_fio }}</td>
                                             <td>{{ item.pairInfo.start_time }}</td>
                                             <td>{{ item.pairInfo.end_time }}</td>
@@ -216,6 +232,9 @@
                                                 Название
                                             </th>
                                             <th class="text-left">
+                                                Аудитория
+                                            </th>
+                                            <th class="text-left">
                                                 Преподаватель
                                             </th>
                                             <th class="text-left">
@@ -236,6 +255,7 @@
                                         >
                                             <td>{{ item.pairInfo.pair_number }}</td>
                                             <td>{{ item.pair_name }}</td>
+                                            <td>{{ item.auditorium.auditorium_name }}</td>
                                             <td>{{ item.teachers_fio }}</td>
                                             <td>{{ item.pairInfo.start_time }}</td>
                                             <td>{{ item.pairInfo.end_time }}</td>
@@ -258,6 +278,9 @@
                                                 Название
                                             </th>
                                             <th class="text-left">
+                                                Аудитория
+                                            </th>
+                                            <th class="text-left">
                                                 Преподаватель
                                             </th>
                                             <th class="text-left">
@@ -278,6 +301,7 @@
                                         >
                                             <td>{{ item.pairInfo.pair_number }}</td>
                                             <td>{{ item.pair_name }}</td>
+                                            <td>{{ item.auditorium.auditorium_name }}</td>
                                             <td>{{ item.teachers_fio }}</td>
                                             <td>{{ item.pairInfo.start_time }}</td>
                                             <td>{{ item.pairInfo.end_time }}</td>
